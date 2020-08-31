@@ -1,0 +1,1 @@
+# navela-solr
