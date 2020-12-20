@@ -45,6 +45,9 @@
     <field name="sap" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="sap_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="sap_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="po_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="po_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="po_number_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="backing_plate" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="backing_plate_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="backing_plate_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
@@ -103,6 +106,9 @@
     <field name="public_sap" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="public_sap_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="public_sap_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_po_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_po_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_po_number_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="public_backing_plate" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="public_backing_plate_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="public_backing_plate_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
@@ -184,8 +190,7 @@
     <field name="total_material_start" type="float" indexed="true" stored="true" omitNorms="true"/>
     <field name="total_weight" type="int" indexed="true" stored="true" omitNorms="true"/>
 
-
-    <field name="pms_target_life" type="float" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_life" type="float" indexed="true" stored="true" omitNorms="true"/>
     <field name="life_target_end" type="float" indexed="true" stored="true" omitNorms="true"/>
     <field name="warning" type="float" indexed="true" stored="true" omitNorms="true"/>
     <field name="alarm" type="float" indexed="true" stored="true" omitNorms="true"/>
