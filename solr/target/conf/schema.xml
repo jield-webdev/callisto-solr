@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema name="navela_target" version="1.5">
+
+    <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml
+      or Solr won't start. _version_ and update log are required for SolrCloud
+   -->
+    <field name="_version_" type="long" indexed="true" stored="true"/>
+
+    <!-- points to the root document of a block of nested documents. Required for nested
+      document support, may be removed otherwise
+   -->
+    <field name="_root_" type="string" indexed="true" stored="false"/>
+
+    <!-- Only remove the "id" field if you have a very good reason to. While not strictly
+     required, it is highly recommended. A <uniqueKey> is present in almost all Solr
+     installations. See the <uniqueKey> declaration below where <uniqueKey> is set to "id".
+   -->
+    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
+    <field name="target_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="public_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_public_name" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="lot_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="lot_id_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="lot_id_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="scientific_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="scientific_name_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="scientific_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="scientific_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_material" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_material_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_material_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="material_abbreviation" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_abbreviation_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_abbreviation_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="comments" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="comments_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sap" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sap_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sap_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="po_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="po_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="po_number_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="backing_plate" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="backing_plate_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="backing_plate_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="backing_plate_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purity" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purity_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purity_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purity_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="drawing_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="drawing_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="drawing_number_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="magnetic_property" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="magnetic_property_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="magnetic_property_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="conductive_property" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="conductive_property_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="conductive_property_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="toxic" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="toxic_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="toxic_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+    <field name="toxic_comment" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="toxic_comment_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="toxic_comment_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="property_sort_*" type="string_ci" indexed="true" stored="true"/>
+    <dynamicField name="property_search_*" type="text_general_edge_ngram" indexed="true" stored="true"/>
+    <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="property_array_search_*" type="text_general_edge_ngram" indexed="true" stored="true"
+                  multiValued="true"/>
+
+    <field name="public_lot_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_lot_id_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_lot_id_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_scientific_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_scientific_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_scientific_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="public_material_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_material_material" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_material_material_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_material_material_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="public_material_abbreviation" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_material_abbreviation_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_material_abbreviation_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="public_comments" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_comments_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_sap" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_sap_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_sap_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_po_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_po_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_po_number_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_backing_plate" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_backing_plate_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_backing_plate_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_backing_plate_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="public_purity" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_purity_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_purity_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_vendor_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_vendor_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_drawing_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_drawing_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_drawing_number_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="public_magnetic_property" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_magnetic_property_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_magnetic_property_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="public_conductive_property" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_conductive_property_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_conductive_property_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="public_toxic" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="public_toxic_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+    <field name="public_toxic_comment" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_toxic_comment_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_toxic_comment_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+    <dynamicField name="public_property_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="public_property_sort_*" type="string_ci" indexed="true" stored="true"/>
+    <dynamicField name="public_property_search_*" type="text_general_edge_ngram" indexed="true" stored="true"/>
+    <dynamicField name="public_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="public_property_array_search_*" type="text_general_edge_ngram" indexed="true" stored="true"
+                  multiValued="true"/>
+
+    <field name="last_in" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_in_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_in_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_in_position_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="currently_in" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="currently_in_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="currently_in_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="currently_in_position_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="next_in" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="next_in_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="next_in_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="next_in_position_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="location" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="amount_of_tool" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="tool" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="tool_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <field name="total_thickness" type="float" indexed="true" stored="true" omitNorms="true"/>
+    <field name="total_material_start" type="float" indexed="true" stored="true" omitNorms="true"/>
+    <field name="total_weight" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="target_life" type="float" indexed="true" stored="true" omitNorms="true"/>
+    <field name="life_target_end" type="float" indexed="true" stored="true" omitNorms="true"/>
+    <field name="warning" type="float" indexed="true" stored="true" omitNorms="true"/>
+    <field name="alarm" type="float" indexed="true" stored="true" omitNorms="true"/>
+    <field name="spc_alarm" type="float" indexed="true" stored="true" omitNorms="true"/>
+    <field name="final_alarm" type="float" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_spc_alarm" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
+    <uniqueKey>id</uniqueKey>
+
+    <field name="text" type="string_ci" indexed="true" stored="false"/>
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+    <fieldType name="float" class="solr.FloatPointField" omitNorms="true" useDocValuesAsStored="false"/>
+    <fieldType name="long" class="solr.LongPointField" omitNorms="true" useDocValuesAsStored="false"/>
+    <fieldType name="int" class="solr.IntPointField" omitNorms="true" useDocValuesAsStored="false"/>
+    <fieldType name="date" class="solr.DatePointField" omitNorms="true" useDocValuesAsStored="false"/>
+
+    <fieldType name="text_en_splitting" class="solr.TextField" positionIncrementGap="100"
+               autoGeneratePhraseQueries="true">
+        <analyzer type="index">
+            <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+            <filter class="solr.StopFilterFactory"
+                    ignoreCase="true"
+                    words="lang/stopwords_en.txt"
+            />
+            <filter class="solr.WordDelimiterGraphFilterFactory" generateNumberParts="1"
+                    catenateWords="1" catenateNumbers="1" catenateAll="0" splitOnCaseChange="1"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+            <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+            <filter class="solr.PorterStemFilterFactory"/>
+        </analyzer>
+        <analyzer type="query">
+            <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+            <filter class="solr.StopFilterFactory"
+                    ignoreCase="true"
+                    words="lang/stopwords_en.txt"
+            />
+            <filter class="solr.WordDelimiterGraphFilterFactory" generateNumberParts="1"
+                    catenateWords="0" catenateNumbers="0" catenateAll="0" splitOnCaseChange="1"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+            <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+            <filter class="solr.PorterStemFilterFactory"/>
+        </analyzer>
+    </fieldType>
+
+    <fieldType name="text_general_edge_ngram" class="solr.TextField" positionIncrementGap="100">
+        <analyzer type="index">
+            <tokenizer class="solr.LetterTokenizerFactory"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+            <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="15"/>
+        </analyzer>
+        <analyzer type="query">
+            <tokenizer class="solr.LetterTokenizerFactory"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+    </fieldType>
+
+    <fieldType name="string_ci" class="solr.TextField"
+               sortMissingLast="true" omitNorms="true">
+        <analyzer>
+            <tokenizer class="solr.KeywordTokenizerFactory"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+    </fieldType>
+</schema>
