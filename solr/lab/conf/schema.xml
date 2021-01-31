@@ -42,6 +42,10 @@
     <field name="description_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
