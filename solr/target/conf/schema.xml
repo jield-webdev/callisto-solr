@@ -201,8 +201,7 @@
     <field name="public_backing_plate" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="public_backing_plate_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="public_backing_plate_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="public_backing_plate_search" type="text_general_edge_ngram" indexed="true" stored="true"
-           omitNorms="true"/>
+    <field name="public_backing_plate_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="public_backing_plate" dest="public_backing_plate_sort"/>
     <copyField source="public_backing_plate" dest="public_backing_plate_search"/>
