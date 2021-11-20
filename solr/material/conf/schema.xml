@@ -33,6 +33,7 @@
     <copyField source="abbreviation" dest="abbreviation_sort"/>
     <copyField source="abbreviation" dest="abbreviation_search"/>
 
+    <field name="amount_of_names" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="names_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="names" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="names_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
