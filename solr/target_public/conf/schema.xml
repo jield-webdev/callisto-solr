@@ -104,6 +104,7 @@
     <copyField source="conductive_property" dest="conductive_property_search"/>
 
     <field name="has_toxic" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_toxic_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="toxic_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="toxic" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="toxic_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
