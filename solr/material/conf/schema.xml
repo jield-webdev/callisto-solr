@@ -33,24 +33,47 @@
     <copyField source="abbreviation" dest="abbreviation_sort"/>
     <copyField source="abbreviation" dest="abbreviation_search"/>
 
-    <field name="name_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+    <field name="names_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="names" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="names_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
-    <copyField source="name" dest="name_search"/>
+    <copyField source="names" dest="names_search"/>
 
     <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="amount_of_clusters" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_clusters" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_clusters_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="clusters_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="clusters_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="clusters_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <field name="amount_of_tools" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_tools" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_tools_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="tools_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="tools_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="tools_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <field name="amount_of_chambers" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_chambers" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_chambers_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="chambers_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="chambers_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="chambers_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <field name="amount_of_positions" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_positions" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_positions_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="positions_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="positions_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="positions_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
     <field name="amount_of_targets" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_targets" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_targets_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="amount_of_tools" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_tools" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="tool" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="tool_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <field name="magnetic_property" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="magnetic_property_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
@@ -67,6 +90,13 @@
 
     <copyField source="conductive_property" dest="conductive_property_sort"/>
     <copyField source="conductive_property" dest="conductive_property_search"/>
+
+    <field name="has_toxic" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_toxic_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="toxic_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="toxic" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="toxic_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
 
     <field name="toxic_comment" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="toxic_comment_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
