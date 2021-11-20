@@ -94,10 +94,6 @@
     <field name="positions_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="positions_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
-    <field name="amount_of_targets" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_targets" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_targets_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <uniqueKey>id</uniqueKey>
 
     <field name="text" type="string_ci" indexed="true" stored="false"/>
