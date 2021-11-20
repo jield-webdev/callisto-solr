@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="navela_target" version="1.5">
+<schema name="navela_target_public" version="1.5">
 
     <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml
       or Solr won't start. _version_ and update log are required for SolrCloud
@@ -35,12 +35,51 @@
     <copyField source="name_name" dest="name_name_sort"/>
     <copyField source="name_name" dest="name_name_search"/>
 
+    <field name="public_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="public_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="public_name" dest="public_name_sort"/>
+    <copyField source="public_name" dest="public_name_search"/>
+
+    <field name="has_public_name" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="lot_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="lot_id_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="lot_id_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="lot_id" dest="lot_id_sort"/>
     <copyField source="lot_id" dest="lot_id_search"/>
+
+    <field name="scientific_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="scientific_name_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="scientific_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="scientific_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="scientific_name" dest="scientific_name_sort"/>
+    <copyField source="scientific_name" dest="scientific_name_search"/>
+
+    <field name="material_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_material" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_material_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_material_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+
+    <copyField source="material_material" dest="material_material_sort"/>
+    <copyField source="material_material" dest="material_material_search"/>
+
+    <field name="material_abbreviation" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_abbreviation_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="material_abbreviation_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
+
+    <copyField source="material_abbreviation" dest="material_abbreviation_sort"/>
+    <copyField source="material_abbreviation" dest="material_abbreviation_search"/>
+
+    <field name="comments" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="comments_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="comments" dest="comments_search"/>
 
     <field name="sap" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="sap_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
@@ -55,28 +94,6 @@
 
     <copyField source="po_number" dest="po_number_sort"/>
     <copyField source="po_number" dest="po_number_search"/>
-
-    <field name="public_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="public_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="public_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="public_name" dest="public_name_sort"/>
-    <copyField source="public_name" dest="public_name_search"/>
-
-    <field name="has_public_name" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="material_material" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="material_material_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="material_material_search" type="text_general_edge_ngram" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <copyField source="material_material" dest="material_material_sort"/>
-    <copyField source="material_material" dest="material_material_search"/>
-
-    <field name="comments" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="comments_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="comments" dest="comments_search"/>
 
     <field name="backing_plate" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="backing_plate_id" type="int" indexed="true" stored="true" omitNorms="true"/>
@@ -93,6 +110,21 @@
 
     <copyField source="purity" dest="purity_sort"/>
     <copyField source="purity" dest="purity_search"/>
+
+    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="vendor" dest="vendor_sort"/>
+    <copyField source="vendor" dest="vendor_search"/>
+
+    <field name="drawing_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="drawing_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="drawing_number_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="drawing_number" dest="drawing_number_sort"/>
+    <copyField source="drawing_number" dest="drawing_number_search"/>
 
     <!--    Material properties-->
     <field name="magnetic_property" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -137,6 +169,7 @@
     <field name="has_safety_icons" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_safety_icons_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="safety_icons_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
 
     <dynamicField name="property_single_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="property_single_sort_*" type="string_ci" indexed="true" stored="true"/>
