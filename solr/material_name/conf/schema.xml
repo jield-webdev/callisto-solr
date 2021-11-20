@@ -105,6 +105,19 @@
     <field name="positions_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="positions_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
+    <dynamicField name="material_property_single_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="material_property_single_sort_*" type="string_ci" indexed="true" stored="true"/>
+    <dynamicField name="material_property_single_search_*" type="text_general_edge_ngram" indexed="true" stored="true"/>
+
+    <copyField source="material_property_single_*" dest="material_property_single_sort_*"/>
+    <copyField source="material_property_single_*" dest="material_property_single_search_*"/>
+
+    <dynamicField name="material_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="material_property_array_search_*" type="text_general_edge_ngram" indexed="true" stored="true"
+                  multiValued="true"/>
+
+    <copyField source="material_property_array_*" dest="material_property_array_search_*"/>
+
     <uniqueKey>id</uniqueKey>
 
     <field name="text" type="string_ci" indexed="true" stored="false"/>
