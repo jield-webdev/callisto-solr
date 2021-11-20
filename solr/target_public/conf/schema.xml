@@ -121,8 +121,8 @@
     <dynamicField name="property_single_sort_*" type="string_ci" indexed="true" stored="true"/>
     <dynamicField name="property_single_search_*" type="text_general_edge_ngram" indexed="true" stored="true"/>
 
-    <copyField source="property_single_*" dest="property_sort_single_*"/>
-    <copyField source="property_single_*" dest="property_search_single_*"/>
+    <copyField source="property_single_*" dest="property_single_sort_*"/>
+    <copyField source="property_single_*" dest="property_single_sort_*"/>
 
     <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="property_array_search_*" type="text_general_edge_ngram" indexed="true" stored="true"
