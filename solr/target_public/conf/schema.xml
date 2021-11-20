@@ -119,12 +119,23 @@
     <copyField source="toxic_comment" dest="toxic_comment_sort"/>
     <copyField source="toxic_comment" dest="toxic_comment_search"/>
 
+    <field name="has_safety_statements" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_safety_statements_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="safety_statements_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="safety_statements_statement" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="safety_statements_number" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="safety_statements_full" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <field name="has_safety_icons" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_safety_icons_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="safety_icons_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
     <dynamicField name="property_single_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="property_single_sort_*" type="string_ci" indexed="true" stored="true"/>
     <dynamicField name="property_single_search_*" type="text_general_edge_ngram" indexed="true" stored="true"/>
 
     <copyField source="property_single_*" dest="property_single_sort_*"/>
-    <copyField source="property_single_*" dest="property_single_sort_*"/>
+    <copyField source="property_single_*" dest="property_single_search_*"/>
 
     <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="property_array_search_*" type="text_general_edge_ngram" indexed="true" stored="true"

@@ -66,6 +66,17 @@
     <copyField source="toxic_comment" dest="toxic_comment_sort"/>
     <copyField source="toxic_comment" dest="toxic_comment_search"/>
 
+    <field name="has_safety_statements" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_safety_statements_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="safety_statements_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="safety_statements_statement" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="safety_statements_number" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="safety_statements_full" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <field name="has_safety_icons" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_safety_icons_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="safety_icons_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
     <field name="amount_of_clusters" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_clusters" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_clusters_text" type="string" indexed="true" stored="true" omitNorms="true"/>
