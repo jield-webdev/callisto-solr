@@ -27,7 +27,7 @@
     <copyField source="display_name" dest="display_name_sort"/>
     <copyField source="display_name" dest="display_name_search"/>
 
-    <field name="name_id" type="integer" indexed="true" stored="true" omitNorms="true"/>
+    <field name="name_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
