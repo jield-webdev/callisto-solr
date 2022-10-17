@@ -16,7 +16,6 @@
      required, it is highly recommended. A <uniqueKey> is present in almost all Solr
      installations. See the <uniqueKey> declaration below where <uniqueKey> is set to "id".
    -->
-    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
     <field name="material_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
