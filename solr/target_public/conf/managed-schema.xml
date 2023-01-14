@@ -35,14 +35,8 @@
     <copyField source="name_name" dest="name_name_sort"/>
     <copyField source="name_name" dest="name_name_search"/>
 
-    <field name="public_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="public_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="public_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="public_name" dest="public_name_sort"/>
-    <copyField source="public_name" dest="public_name_search"/>
-
-    <field name="has_public_name" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_confidential_material_name" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_confidential_material_name_text" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="lot_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="lot_id_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
