@@ -53,6 +53,16 @@
     <field name="has_targets" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_targets_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="amount_of_targets_of_type_pvd" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_targets_of_type_precursor" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_targets_of_type_pvd" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_targets_of_type_pvd_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_targets_of_type_precursor" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_targets_of_type_precursor_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_type_ids" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="target_type_names" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="target_type_types" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
     <field name="has_toxic" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_toxic_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="toxic_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
