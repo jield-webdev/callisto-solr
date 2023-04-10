@@ -8,3 +8,4 @@ ADD --chown=solr:solr solr/target /var/solr/data/target
 ADD --chown=solr:solr solr/target_public /var/solr/data/target_public
 ADD --chown=solr:solr solr/material_name /var/solr/data/material_name
 ADD --chown=solr:solr solr/material /var/solr/data/material
+ADD --chown=solr:solr solr/canister /var/solr/data/canister
