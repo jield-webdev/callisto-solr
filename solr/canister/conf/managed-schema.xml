@@ -50,6 +50,9 @@
     <copyField source="status" dest="status_sort"/>
     <copyField source="status" dest="status_search"/>
 
+    <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="amount_of_clusters" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_clusters" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_clusters_text" type="string" indexed="true" stored="true" omitNorms="true"/>
