@@ -63,6 +63,22 @@
     <field name="positions_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="positions_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
+    <dynamicField name="canister_type_property_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="canister_type_property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
+    <dynamicField name="canister_type_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="canister_type_property_date_*" type="pdate" indexed="true" stored="true"/>
+    <dynamicField name="canister_type_property_integer_*" type="pint" indexed="true" stored="true"/>
+
+    <dynamicField name="canister_type_property_min_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="canister_type_property_max_*" type="pint" indexed="true" stored="true"/>
+
+    <dynamicField name="canister_type_property_friendly_value_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="canister_type_property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>
+    <dynamicField name="canister_type_property_friendly_value_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
+
+    <copyField source="canister_type_property_friendly_value_*" dest="canister_type_property_friendly_value_search_*"/>
+    <copyField source="canister_type_property_friendly_value_*" dest="canister_type_property_friendly_value_sort_*"/>
+    <copyField source="canister_type_property_*" dest="canister_type_property_sort_*"/>
 
     <uniqueKey>id</uniqueKey>
 

@@ -131,18 +131,22 @@
     <field name="has_safety_icons_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="safety_icons_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
-    <dynamicField name="property_single_*" type="string" indexed="true" stored="true"/>
-    <dynamicField name="property_single_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
-    <dynamicField name="property_single_search_*" type="text_general" indexed="true" stored="true"/>
-
-    <copyField source="property_single_*" dest="property_single_sort_*"/>
-    <copyField source="property_single_*" dest="property_single_search_*"/>
-
+    <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
     <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="property_array_search_*" type="text_general" indexed="true" stored="true"
-                  multiValued="true"/>
+    <dynamicField name="property_date_*" type="pdate" indexed="true" stored="true"/>
+    <dynamicField name="property_integer_*" type="pint" indexed="true" stored="true"/>
 
-    <copyField source="property_array_*" dest="property_array_search_*"/>
+    <dynamicField name="property_min_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="property_max_*" type="pint" indexed="true" stored="true"/>
+
+    <dynamicField name="property_friendly_value_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>
+    <dynamicField name="property_friendly_value_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
+
+    <copyField source="property_friendly_value_*" dest="property_friendly_value_search_*"/>
+    <copyField source="property_friendly_value_*" dest="property_friendly_value_sort_*"/>
+    <copyField source="property_*" dest="property_sort_*"/>
 
     <uniqueKey>id</uniqueKey>
 
