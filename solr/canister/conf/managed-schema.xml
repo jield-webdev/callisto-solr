@@ -19,6 +19,14 @@
     <field name="id" type="string" indexed="true" stored="true" required="true"/>
     <field name="canister_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="ownership" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="ownership_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="ownership_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="ownership_is_imec_owned" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="ownership_is_supplier_owned" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="ownership_text" dest="ownership_sort"/>
+
     <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
@@ -73,8 +81,10 @@
     <dynamicField name="canister_type_property_max_*" type="pint" indexed="true" stored="true"/>
 
     <dynamicField name="canister_type_property_friendly_value_*" type="string" indexed="true" stored="true"/>
-    <dynamicField name="canister_type_property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>
-    <dynamicField name="canister_type_property_friendly_value_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
+    <dynamicField name="canister_type_property_friendly_value_search_*" type="text_general" indexed="true"
+                  stored="true"/>
+    <dynamicField name="canister_type_property_friendly_value_sort_*" type="text_gen_sort" indexed="true"
+                  stored="true"/>
 
     <copyField source="canister_type_property_friendly_value_*" dest="canister_type_property_friendly_value_search_*"/>
     <copyField source="canister_type_property_friendly_value_*" dest="canister_type_property_friendly_value_sort_*"/>
