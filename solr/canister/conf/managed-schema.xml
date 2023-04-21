@@ -42,6 +42,13 @@
     <copyField source="type_type" dest="type_type_sort"/>
     <copyField source="type_type" dest="type_type_search"/>
 
+    <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="status" dest="status_sort"/>
+    <copyField source="status" dest="status_search"/>
 
     <field name="amount_of_clusters" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_clusters" type="boolean" indexed="true" stored="true" omitNorms="true"/>
