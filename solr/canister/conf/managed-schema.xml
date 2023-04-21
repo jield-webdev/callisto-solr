@@ -22,8 +22,8 @@
     <field name="ownership" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="ownership_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="ownership_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="ownership_is_imec_owned" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="ownership_is_supplier_owned" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="ownership_is_imec_owned" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="ownership_is_supplier_owned" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="ownership_text" dest="ownership_sort"/>
 
