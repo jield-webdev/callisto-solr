@@ -42,6 +42,13 @@
     <copyField source="type_type" dest="type_type_sort"/>
     <copyField source="type_type" dest="type_type_search"/>
 
+    <field name="serial_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="serial_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="serial_number_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="serial_number" dest="serial_number_sort"/>
+    <copyField source="serial_number" dest="serial_number_search"/>
+
     <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
