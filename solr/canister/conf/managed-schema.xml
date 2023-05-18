@@ -27,6 +27,14 @@
 
     <copyField source="ownership_text" dest="ownership_sort"/>
 
+    <field name="valve" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="valve_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="valve_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="valve_is_manual" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="valve_is_pneumatic" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="valve_text" dest="valve_sort"/>
+
     <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
