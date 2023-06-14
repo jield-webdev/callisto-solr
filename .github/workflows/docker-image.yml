@@ -1,4 +1,4 @@
-name: Navela Solr Image
+name: Callisto Solr Image
 
 on:
   push:
@@ -37,4 +37,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jield-webdev/navela/solr:latest
+          tags: ghcr.io/jield-webdev/callisto/solr:latest
