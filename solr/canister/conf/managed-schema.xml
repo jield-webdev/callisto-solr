@@ -110,6 +110,11 @@
     <field name="positions_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="positions_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
+    <field name="materials_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="materials_material" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="material_names_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="material_names_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
     <dynamicField name="canister_type_property_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="canister_type_property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
     <dynamicField name="canister_type_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
