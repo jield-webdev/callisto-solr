@@ -167,6 +167,12 @@
     <copyField source="toxic_comment" dest="toxic_comment_sort"/>
     <copyField source="toxic_comment" dest="toxic_comment_search"/>
 
+    <field name="amount_of_pvd_target_shapes" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_pvd_target_shapes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_pvd_target_shapes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="pvd_target_shapes_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="pvd_target_shapes_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
     <field name="has_safety_statements" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_safety_statements_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="safety_statements_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
