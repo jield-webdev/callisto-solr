@@ -17,7 +17,7 @@
      installations. See the <uniqueKey> declaration below where <uniqueKey> is set to "id".
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true"/>
-    <field name="request_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="target_number" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="target_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
