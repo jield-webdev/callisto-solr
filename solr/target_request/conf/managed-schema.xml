@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="request" version="1.6">
+<schema name="target_request" version="1.6">
 
     <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml
       or Solr won't start. _version_ and update log are required for SolrCloud
@@ -19,53 +19,38 @@
     <field name="id" type="string" indexed="true" stored="true" required="true"/>
     <field name="request_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="target_number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="target_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="target_number_search" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="request_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="request_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="request_number" dest="request_number_sort"/>
 
-    <copyField source="type_name" dest="type_name_sort"/>
-    <copyField source="type_name" dest="type_name_search"/>
+    <field name="request_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="request_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="request_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="type_type" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_type_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="request_name" dest="request_name_sort"/>
+    <copyField source="request_name" dest="request_name_search"/>
 
-    <copyField source="type_type" dest="type_type_sort"/>
-    <copyField source="type_type" dest="type_type_search"/>
+    <field name="target_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_type_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_type_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_type_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="type_is_precursor" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_is_pvd" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="target_type_name" dest="target_type_name_sort"/>
+    <copyField source="target_type_name" dest="target_type_name_search"/>
 
-    <!-- Create some standard fields -->
-    <field name="display_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="display_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="display_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_type_type" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_type_type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_type_type_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="display_name" dest="display_name_sort"/>
-    <copyField source="display_name" dest="display_name_search"/>
+    <copyField source="target_type_type" dest="target_type_type_sort"/>
+    <copyField source="target_type_type" dest="target_type_type_search"/>
 
-    <field name="name_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_type_is_precursor" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="target_type_is_pvd" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="name_name" dest="name_name_sort"/>
-    <copyField source="name_name" dest="name_name_search"/>
-
-    <field name="has_confidential_material_name" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_confidential_material_name_text" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="lot_id" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="lot_id_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="lot_id_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="lot_id" dest="lot_id_sort"/>
-    <copyField source="lot_id" dest="lot_id_search"/>
+    <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="material_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="material_material" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -84,179 +69,34 @@
     <copyField source="material_abbreviation" dest="material_abbreviation_sort"/>
     <copyField source="material_abbreviation" dest="material_abbreviation_search"/>
 
-    <field name="comments" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="comments_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="comments" dest="comments_search"/>
+    <field name="purchase_sap" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purchase_sap_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purchase_sap_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="sap" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="sap_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="sap_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="purchase_sap" dest="purchase_sap_sort"/>
+    <copyField source="purchase_sap" dest="purchase_sap_search"/>
 
-    <copyField source="sap" dest="sap_sort"/>
-    <copyField source="sap" dest="sap_search"/>
+    <field name="purchase_purchase_order" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purchase_purchase_order_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purchase_purchase_order_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="po_number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="po_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="po_number_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="purchase_purchase_order" dest="purchase_purchase_order_sort"/>
+    <copyField source="purchase_purchase_order" dest="purchase_purchase_order_search"/>
 
-    <copyField source="po_number" dest="po_number_sort"/>
-    <copyField source="po_number" dest="po_number_search"/>
+    <field name="information_vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="information_vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="information_vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="information_vendor_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="backing_plate" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="backing_plate_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="backing_plate_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="backing_plate_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="information_vendor" dest="information_vendor_sort"/>
+    <copyField source="information_vendor" dest="information_vendor_search"/>
 
-    <copyField source="backing_plate" dest="backing_plate_sort"/>
-    <copyField source="backing_plate" dest="backing_plate_search"/>
-
-    <field name="purity" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purity_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purity_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purity_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="purity" dest="purity_sort"/>
-    <copyField source="purity" dest="purity_search"/>
-
-    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="vendor" dest="vendor_sort"/>
-    <copyField source="vendor" dest="vendor_search"/>
-
-    <field name="drawing_number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="drawing_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="drawing_number_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="drawing_number" dest="drawing_number_sort"/>
-    <copyField source="drawing_number" dest="drawing_number_search"/>
-
-    <!--    Material properties-->
-    <field name="magnetic_property" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="magnetic_property_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="magnetic_property_search" type="text_general" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <copyField source="magnetic_property" dest="magnetic_property_sort"/>
-    <copyField source="magnetic_property" dest="magnetic_property_search"/>
-
-    <field name="conductive_property" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="conductive_property_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="conductive_property_search" type="text_general" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <copyField source="conductive_property" dest="conductive_property_sort"/>
-    <copyField source="conductive_property" dest="conductive_property_search"/>
-
-    <field name="has_toxic" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_toxic_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="toxic_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="toxic" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="toxic_search" type="text_general" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
-
-    <copyField source="toxic" dest="toxic_search"/>
-
-    <field name="toxic_comment" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="toxic_comment_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="toxic_comment_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="toxic_comment" dest="toxic_comment_sort"/>
-    <copyField source="toxic_comment" dest="toxic_comment_search"/>
-
-    <field name="amount_of_pvd_target_shapes" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_pvd_target_shapes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_pvd_target_shapes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="pvd_target_shapes_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="pvd_target_shapes_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
-    <field name="has_safety_statements" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_safety_statements_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="safety_statements_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="safety_statements_statement" type="string" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
-    <field name="safety_statements_number" type="string" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
-    <field name="safety_statements_full" type="string" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
-
-    <field name="has_safety_icons" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_safety_icons_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="safety_icons_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
-
-    <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
-    <dynamicField name="property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
-    <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="property_date_*" type="pdate" indexed="true" stored="true"/>
-    <dynamicField name="property_integer_*" type="pint" indexed="true" stored="true"/>
-
-    <dynamicField name="property_min_*" type="pint" indexed="true" stored="true"/>
-    <dynamicField name="property_max_*" type="pint" indexed="true" stored="true"/>
-
-    <dynamicField name="property_friendly_value_*" type="string" indexed="true" stored="true"/>
-    <dynamicField name="property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>
-    <dynamicField name="property_friendly_value_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
-
-    <copyField source="property_friendly_value_*" dest="property_friendly_value_search_*"/>
-    <copyField source="property_friendly_value_*" dest="property_friendly_value_sort_*"/>
-    <copyField source="property_*" dest="property_sort_*"/>
-
-    <field name="last_in" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_in_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_in_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_in_position_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="last_in" dest="last_in_sort"/>
-    <copyField source="last_in" dest="last_in_search"/>
-
-    <field name="currently_in" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="currently_in_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="currently_in_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    <field name="currently_in_position_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="currently_in" dest="currently_in_sort"/>
-    <copyField source="currently_in" dest="currently_in_search"/>
-
-    <field name="next_in" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="next_in_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="next_in_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    <field name="next_in_position_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="next_in" dest="next_in_sort"/>
-    <copyField source="next_in" dest="next_in_search"/>
-
-    <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="status_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="status_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="status" dest="status_sort"/>
-    <copyField source="status" dest="status_search"/>
-
-    <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="location" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="location" dest="location_sort"/>
-    <copyField source="location" dest="location_search"/>
-
-    <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="user" dest="user_sort"/>
     <copyField source="user" dest="user_search"/>
 
     <field name="amount_of_clusters" type="pint" indexed="true" stored="true" omitNorms="true"/>
@@ -286,18 +126,6 @@
     <field name="positions_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="positions_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="positions_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
-    <field name="total_thickness" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-    <field name="total_material_start" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-    <field name="total_weight" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="target_life" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-    <field name="life_target_end" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-    <field name="warning" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-    <field name="alarm" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-    <field name="spc_alarm" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-    <field name="final_alarm" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_spc_alarm" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
     <uniqueKey>id</uniqueKey>
 
