@@ -119,8 +119,8 @@
     <copyField source="purity" dest="purity_sort"/>
     <copyField source="purity" dest="purity_search"/>
 
-    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 

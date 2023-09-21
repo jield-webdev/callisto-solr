@@ -61,6 +61,7 @@
     <copyField source="material_material" dest="material_material_sort"/>
     <copyField source="material_material" dest="material_material_search"/>
 
+
     <field name="material_abbreviation" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="material_abbreviation_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="material_abbreviation_search" type="text_general" indexed="true" stored="true"
@@ -98,6 +99,14 @@
     <field name="user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="user" dest="user_search"/>
+
+    <field name="project_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="project_name" dest="project_name_sort"/>
+    <copyField source="project_name" dest="project_name_search"/>
 
     <field name="amount_of_clusters" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_clusters" type="boolean" indexed="true" stored="true" omitNorms="true"/>
