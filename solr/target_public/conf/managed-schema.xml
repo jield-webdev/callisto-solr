@@ -296,6 +296,9 @@
     <field name="final_alarm" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_spc_alarm" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="precursor_canister_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="precursor_canister_label" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <uniqueKey>id</uniqueKey>
 
     <!-- field type definitions. The "name" attribute is
