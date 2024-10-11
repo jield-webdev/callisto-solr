@@ -153,6 +153,7 @@
 
     <field name="has_toxic" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_toxic_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="toxic_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="toxic" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="toxic_search" type="text_general" indexed="true" stored="true" omitNorms="true"
