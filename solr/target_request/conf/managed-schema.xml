@@ -136,6 +136,9 @@
     <field name="positions_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="positions_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
+    <field name="has_target" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_target_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <uniqueKey>id</uniqueKey>
 
     <!-- field type definitions. The "name" attribute is
