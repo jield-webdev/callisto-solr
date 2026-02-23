@@ -139,6 +139,9 @@
     <field name="has_target" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_target_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="request_status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="request_status_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <uniqueKey>id</uniqueKey>
 
     <!-- field type definitions. The "name" attribute is
