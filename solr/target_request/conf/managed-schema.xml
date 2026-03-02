@@ -142,6 +142,9 @@
     <field name="request_status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="request_status_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="request_next_step_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="request_next_step_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <uniqueKey>id</uniqueKey>
 
     <!-- field type definitions. The "name" attribute is
