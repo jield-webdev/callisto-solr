@@ -49,13 +49,13 @@
     <copyField source="performed_by" dest="performed_by_sort"/>
     <copyField source="performed_by" dest="performed_by_search"/>
 
-    <field name="purchase_order_number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purchase_order_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purchase_order_number_search" type="text_en_splitting" indexed="true" stored="true"
+    <field name="wbs" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="wbs_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="wbs_search" type="text_en_splitting" indexed="true" stored="true"
            omitNorms="true"/>
 
-    <copyField source="purchase_order_number" dest="purchase_order_number_sort"/>
-    <copyField source="purchase_order_number" dest="purchase_order_number_search"/>
+    <copyField source="wbs" dest="wbs_sort"/>
+    <copyField source="wbs" dest="wbs_search"/>
 
     <field name="service_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
